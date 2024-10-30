@@ -1,7 +1,7 @@
 <div class = "container">
     <h1>タスクの追加</h1>
-    <%= from_with model: @todo, local:true do |f| %>
-    <%= f.label :title%>
+    <%= form_with model: @todo, local:true do |f| %>
+    <%= f.label :title %>
     <%= f.text_field :title, placeholder: "タスクを入力する" %>
     <input type = "submit" value = "保存する">
     <% end %>

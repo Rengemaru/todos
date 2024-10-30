@@ -1,8 +1,8 @@
 <div class = "container">
     <h1>タスクの編集</h1>
-    <%= from_with model: @todo, local: true do |from| %>
-        <%= from.label :title %>
-        <%= from.text_field :title, placeholder: "タスクを入力する" %>
+    <%= form_with model: @todo, local: true do |f| %>
+        <%= f.label :title %>
+        <%= f.text_field :title, placeholder: "タスクを入力する" %>
         <input type = "submit" value = "保存する">
     <% end %>
     <%= link_to '一覧に戻る', todos_path, class: "back"%>
