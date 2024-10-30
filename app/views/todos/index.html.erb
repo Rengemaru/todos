@@ -14,11 +14,16 @@
             <% @todos.each do |todo| %>
             <tr>
                 <td><%= todo.title %> </td>
+            </tr>
+            <tr>
+                <td><%= todo.introduction%></td>
+            </tr>
+            <tr>
                 <td>
                     <%= link_to "編集", edit_todo_path(todo), class: "edit" %>
                     <%= link_to "削除", todo_path(todo), data: { turbo_method: :delete, turbo_confirm: '本当に削除していいですか？'}, class: "delete"%>
                 </td>
-                </tr>
+            </tr>
             <% end %>
         </tbody>
     </table>
