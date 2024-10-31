@@ -10,8 +10,8 @@
                 <%= todo.title %> <%= todo.introduction%>
             </span>
             <div>
-                <%= link_to "編集", edit_todo_path(todo), class: "edit" %>
-                <%= link_to "削除", todo_path(todo), data: { "turbo-method": :delete }, class: "delete" %>
+                <%= link_to "編集", edit_todo_path(todo), class: "edit" %> 
+                <%= button_to "削除", todo_path(todo), method: :delete , class: "delete" %>
             </div>
         <% end %>
     </ul>
