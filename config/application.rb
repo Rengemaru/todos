@@ -5,13 +5,13 @@ require "rails/all"
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
-  
+
 module Controller
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.2
     #タイムゾーンを東京に設定 # rubocop:disable Layout/LeadingCommentSpace
-    config.time_zone = 'Tokyo'
+    config.time_zone = "Tokyo"
     # デフォルトのロケールを日本語に設定
     config.i18n.default_locale = :ja
     # Please, add to the `ignore` list any other `lib` subdirectories that do
