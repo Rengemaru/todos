@@ -38,6 +38,6 @@ class TodosController < ApplicationController
   private
 
   def todo_params
-    params.require(:todo).permit(:title, :introduction)
+    params.require(:todo).permit(:title, :introduction, :checkbox)
   end
 end
