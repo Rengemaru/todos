@@ -16,6 +16,6 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_31_064335) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "introduction"
-    t.boolean "checkbox", default: false
+    t.boolean "checkbox", default: false , null: false
   end
 end

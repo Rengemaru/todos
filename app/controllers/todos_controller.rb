@@ -1,4 +1,6 @@
 class TodosController < ApplicationController
+  before_action :set_todo, only: [ :edit, :update, :destroy, :toggle_pin ]
+
   def index
     @todos = Todo.all
   end
@@ -8,7 +10,7 @@ class TodosController < ApplicationController
   end
 
   def create
-    @todo = Todo.create(todo_params)
+    @todo = Todo.new(todo_params)
     if @todo.save
       redirect_to todos_path
     else
@@ -17,11 +19,9 @@ class TodosController < ApplicationController
   end
 
   def edit
-    @todo = Todo.find(params[:id])
   end
 
   def update
-    @todo = Todo.find(params[:id])
     if @todo.update(todo_params)
       redirect_to todos_path
     else
@@ -30,8 +30,12 @@ class TodosController < ApplicationController
   end
 
   def destroy
-    @todo = Todo.find(params[:id])
     @todo.destroy
+    redirect_to todos_path
+  end
+
+  def toggle_pin
+    @todo.toggle(:checkbox).save
     redirect_to todos_path
   end
 
@@ -39,5 +43,10 @@ class TodosController < ApplicationController
 
   def todo_params
     params.require(:todo).permit(:title, :introduction, :checkbox)
+  end
+
+  def set_todo
+    @todo = Todo.find(params[:id])
+    redirect_to todo_url, status: :see_other if @todo.nil?
   end
 end
