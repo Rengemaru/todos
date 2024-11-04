@@ -1,18 +1,20 @@
 <div class = "container">
     <h1>Todo List</h1>
 
+    <%# ここにタスクを追加するリンクを追加 %>
     <%= link_to "タスクを追加する", new_todo_path, class:"new-task"%>
 
+    <%# ここにタスクの一覧を表示する %>
     <ol>
+        <%# 繰り返し処理を使って、タスクの一覧を表示する %>
         <% @todos.each do |todo| %>
-        <li>
-            <input type="checkbox" <%= todo.checkbox %> class="check">
-            <span>
-                <%= todo.title %> <%= todo.introduction%>
-            </span>
+            <%# タスクのチェックボックスを表示 %>
+            <%# <%= link_to todo.checkbox ? "進行中" : "完了", toggle_pin_todo_path(todo), data: { "turbo-method": :patch } %>
+            <%= todo.title %> <%= todo.introduction%>
             <div>
-                <%= link_to "編集", edit_todo_path(todo), class: "edit" %> 
-                <%= button_to "削除", todo_path(todo), method: :delete , class: "delete" %>
+            <%# タスクの編集リンクを表示 %>
+            <%= link_to "編集", edit_todo_path(todo), class: "edit" %>
+            <%= button_to "削除", todo_path(todo), method: :delete , class: "delete" %>
             </div>
         <% end %>
     </ol>

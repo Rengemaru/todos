@@ -11,9 +11,11 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  resources :todos, only: [ :index, :new, :create, :edit, :update, :destroy ] do
+  resources :todos, only: [ :index, :new, :create, :edit, :update, :destroy ]
+
+  resources :todos do
     member do
-      patch :toggle_pin # PATCH /todos/:id/toggle_pin
+      patch :toggle_complete
     end
   end
 end
