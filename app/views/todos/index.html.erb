@@ -10,7 +10,7 @@
         <% @todos.each do |todo| %>
             <%# タスクのチェックボックスを表示 %>
             <%= button_to todo.checkbox ? "完了" : "進行中", toggle_complete_todo_path(todo), method: :patch %>
-            <%= todo.title %> <%= todo.introduction%>
+            <%= todo.title %> <%= todo.introduction %>
             <div>
             <%# タスクの編集リンクを表示 %>
             <%= link_to "編集", edit_todo_path(todo), class: "edit" %>
