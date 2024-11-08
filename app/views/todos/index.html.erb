@@ -1,3 +1,4 @@
+<% provide(:title, @todo) %>
 <div class = "container">
     <h1>Todo List</h1>
 
@@ -5,17 +6,17 @@
     <%= link_to "タスクを追加する", new_todo_path, class:"new-task"%>
 
     <%# ここにタスクの一覧を表示する %>
-    <ol>
+    <ol class = "todo_list">
         <%# 繰り返し処理を使って、タスクの一覧を表示する %>
         <% @todos.each do |todo| %>
             <%# タスクのチェックボックスを表示 %>
-            <%= button_to todo.checkbox ? "完了" : "進行中", toggle_complete_todo_path(todo), method: :patch %>
-            <%= todo.title %> <%= todo.introduction %>
-            <div>
+            <ul><%= button_to todo.checkbox ? "完了" : "進行中", toggle_complete_todo_path(todo), method: :patch, class:  %></ul>
+            <ul><%= todo.title %> <%= todo.introduction %></ul>
+            <%# <div> %>
             <%# タスクの編集リンクを表示 %>
-            <%= link_to "編集", edit_todo_path(todo), class: "edit" %>
-            <%= button_to "削除", todo_path(todo), method: :delete , class: "delete" %>
-            </div>
+            <ul><%= link_to "編集", edit_todo_path(todo), class: "edit" %></ul>
+            <ul><%= button_to "削除", todo_path(todo), method: :delete , class: "delete" %></ul>
+            <%# </div> %>
         <% end %>
     </ol>
 </div>
