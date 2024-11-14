@@ -58,5 +58,6 @@ end
 
 gem 'bootstrap', '~> 5.3.0'
 gem 'jquery-rails'
-
+gem "bootstrap-will_paginate"
+gem "bootstrap-sass"
 gem "sassc-rails" # sassc-railsを追加

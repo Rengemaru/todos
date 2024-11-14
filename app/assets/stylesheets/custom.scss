@@ -1,0 +1,127 @@
+@import "bootstrap";
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    h1 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    .new-task {
+        display: block;
+        width: fit-content;
+        margin: 10px auto 20px;
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: #fff;
+        border-radius: 5px;
+        text-decoration: none;
+        text-align: center;
+        transition: background-color 0.3s;
+        
+        &:hover {
+        background-color: #45a049;
+        }
+    }
+
+    .todo_list {
+        list-style-type: none;
+        padding: 0;
+
+    .todo {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+        padding: 10px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+        ol {
+        padding: 0;
+        list-style: none;
+        }
+
+        // タイトルとチェックボックスの行
+        .todo-top-row {
+        display: flex;
+        align-items: center;
+
+        .check {
+            margin-right: 10px;
+            padding: 5px 10px;
+            border: none;
+            background-color: #f0f0f0;
+            color: #555;
+            border-radius: 5px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #e0e0e0;
+            }
+        }
+
+        .title-intro {
+            display: flex;
+            flex-direction: column;
+
+            .title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            }
+
+            .introduction {
+            font-size: 14px;
+            color: #666;
+            }
+        }
+        }
+
+        // 編集と削除の行
+        .todo-actions {
+            display: flex;
+            gap: 10px; /* ボタン間のスペース */
+        
+            .action-button {
+            padding: 6px 12px;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            font-size: 14px;
+        
+            &:hover {
+                opacity: 0.9;
+            }
+            }
+        
+            .edit {
+            background-color: #1e90ff;
+        
+            &:hover {
+                background-color: #1c86ee;
+            }
+            }
+        
+            .delete {
+            background-color: #f44336;
+        
+            &:hover {
+                background-color: #e53935;
+            }
+        }
+    }
+}
+}
+}

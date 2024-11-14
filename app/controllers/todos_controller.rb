@@ -1,5 +1,5 @@
 class TodosController < ApplicationController
-  before_action :set_todo, only: [ :edit, :update, :destroy, :toggle_pin, :checkbox ]
+  before_action :set_todo, only: [ :edit, :update, :destroy, :toggle_complete ]
 
   def index
     @todos = Todo.all
@@ -35,21 +35,9 @@ class TodosController < ApplicationController
   end
 
   def toggle_complete
-    @todo = Todo.find(params[:id])  # パラメータからidを取得
     @todo.update(checkbox: !@todo.checkbox) # checkbox の状態を反転
     @todo.save
     redirect_to todos_path, notice: "タスクの状態を更新しました"
-  end
-
-  def toggle_pin
-    @todo.toggle(:checkbox).save
-    redirect_to todos_path
-  end
-
-  def checkbox
-    @todo.checkbox = !@todo.checkbox
-    @todo.save
-    redirect_to todos_path
   end
 
   private
