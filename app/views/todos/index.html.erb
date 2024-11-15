@@ -11,11 +11,15 @@
         <% @todos.each do |todo| %>
             <%# タスクのチェックボックスを表示 %>
             <div class = "todo">
-                <ol><%= button_to todo.checkbox ? "完了" : "進行中", toggle_complete_todo_path(todo), method: :patch, class: 'check' %></ol>
-                <ol><%= todo.title %> <%= todo.introduction %></ol>
+                <%= button_to todo.checkbox ? "完了" : "進行中", 
+                toggle_complete_todo_path(todo),
+                method: :patch, class: 'check' %>
+                <%= todo.title %> <%= todo.introduction %>
                 <%# タスクの編集リンクを表示 %>
-                <ol><%= link_to "編集", edit_todo_path(todo), class: 'action-button edit' %></ol>
-                <ol><%= button_to "削除", todo_path(todo), method: :delete , class: 'action-button delete' %></ol>
+                <div class = 'edit-delete'>
+                    <%= link_to "編集", edit_todo_path(todo), class: 'edit' %>
+                    <%= button_to "削除", todo_path(todo), method: :delete , class: 'delete' %>
+                </div>
             </div>
         <% end %>
     </div>
