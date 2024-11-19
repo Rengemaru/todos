@@ -9,4 +9,8 @@
     # def ensure_single_pinned_todo
     #   Todo.where(pinned: true).where.not(id: id).update_all(pinned: false)
     # end
+    # attr_accessor :set_date
+    def formatted_date
+      date ? date.strftime("%m月 %d日") : "日付未設定"
+    end
   end
