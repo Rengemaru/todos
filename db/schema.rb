@@ -10,12 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_31_064335) do
+ActiveRecord::Schema[8.0].define(version: 2024_11_21_074748) do
   create_table "todos", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "introduction"
-    t.boolean "checkbox", default: false , null: false
+    t.boolean "checkbox", default: false
+    t.date "date"
+    t.string "set_date"
+    t.string "tag"
   end
 end
