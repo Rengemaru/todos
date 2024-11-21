@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_11_18_094411) do
+ActiveRecord::Schema[8.0].define(version: 2024_11_21_074748) do
   create_table "todos", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", null: false
@@ -19,5 +19,6 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_18_094411) do
     t.boolean "checkbox", default: false
     t.date "date"
     t.string "set_date"
+    t.string "tag"
   end
 end
